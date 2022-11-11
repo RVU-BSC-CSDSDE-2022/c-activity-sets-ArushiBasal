@@ -85,13 +85,20 @@ The largest of 1,2 and 3 is 3.
 
 ---
 
-6. Write a C program to compare three numbers using **pass by reference**
+6. Write a C program to compare three numbers using **pass by reference** 
 
 ***Function Declarations***
 
 ```c
 int input();
-void compare(int a, int b, int c, int *largest);
+void compare(int a, int b, int c, int *alargest)
+{
+  *alargest = a;
+  if (a < b)
+    *largest = b;
+  if (*largest < c)
+    *largest = c;
+}
 void output(int a, int b, int c, int largest);
 ```
 
@@ -108,6 +115,15 @@ void output(int a, int b, int c, int largest);
 ```
 1
 ```
+
+int main()
+{
+   int x=input();
+   int y=input();
+   int z=input();
+   int largest;
+   compare(x,y,z,&largest)
+}
 
 ---
 
